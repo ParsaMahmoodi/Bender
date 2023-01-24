@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    public GameObject pauseUI;
+    public void Start()
+    {
+        Time.timeScale = 1f;
+    }
     public void ClickStart()
     {
         SceneManager.LoadScene("Level1");
@@ -25,4 +30,13 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene("Setting");
     }
+    
+    public void GamePause()
+    {
+        pauseUI.SetActive(!pauseUI.activeSelf); //Enable/disable the pause UI
+
+        if (pauseUI.activeSelf) Time.timeScale = 0f;
+        else Time.timeScale = 1f;
+    }
+    
 }
