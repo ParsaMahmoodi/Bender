@@ -17,6 +17,6 @@ public class CrashDetector : MonoBehaviour
 
     void ReloadScene()
     {
-        SceneManager.LoadScene("GameOver");
+        SceneManager.LoadScene("Level1");
     }
 }
