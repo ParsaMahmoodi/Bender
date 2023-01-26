@@ -9,16 +9,25 @@ public class FinishLine : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Player")
+        if(collision.tag == "BikePlayer")
         {
-            Invoke("ReloadScene", sceneLoadDelay);
+            Invoke("ReloadSceneLevel1", sceneLoadDelay);
         }
-        
+        if (collision.tag == "CarPlayer")
+        {
+            Invoke("ReloadSceneLevel2", sceneLoadDelay);
+        }
+
     }
 
-    void ReloadScene()
+    void ReloadSceneLevel1()
     {
         SceneManager.LoadScene("Level1");
+    }
+
+    void ReloadSceneLevel2()
+    {
+        SceneManager.LoadScene("Level2");
     }
 
 }
